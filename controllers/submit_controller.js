@@ -246,26 +246,36 @@ exports.front_link = function (req, res) {
 
 // SUBMITING A SUBREDDIT
 exports.subreddit = function (req, res) {
-    Profile.update({
-            username: req.session.user
-        }, {
-            $push: {
-                owned: req.body.subreddit
-            }
-        },
-        function (err, doc) {
-            if (err) throw err;
+    Subreddit.find({
+        name: req.body.subreddit
+    }, function (err, doc) {
+        if (err) throw err;
 
-        }).then(function () {
-        Subreddit({
-            name: req.body.subreddit,
-            description: req.body.description
-        }).save(function (err, doc) {
-            if (err) throw err
-
-            console.log(`[Frontpage] ${req.body.subreddit} subreddit created`)
-            res.redirect(`/r/${req.body.subreddit}`);
+        if (!doc.length) {
+            Profile.update({
+                username: req.session.user
+            }, {
+                $push: {
+                    owned: req.body.subreddit
+                }
+            },
+            function (err, doc) {
+                if (err) throw err;
+    
+            }).then(function () {
+            Subreddit({
+                name: req.body.subreddit,
+                description: req.body.description
+            }).save(function (err, doc) {
+                if (err) throw err
+    
+                console.log(`[Frontpage] ${req.body.subreddit} subreddit created`)
+                res.redirect(`/r/${req.body.subreddit}`);
+            });
         });
+        } else {
+            throw new Error("Duplicate topic");
+        }
     });
 }
 
