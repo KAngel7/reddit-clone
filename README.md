@@ -2,7 +2,7 @@
 A reddit clone written using node.js / express.js / mongodb / passport.js
 
 ### Website:
-https://reddit.vndevs.com
+https://forum.vndevs.com
 
 ![Image](https://i.imgur.com/HbpGIZP.png)
 
