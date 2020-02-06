@@ -5,7 +5,7 @@ let PostState = require("../models/postState")
 
 exports.get_all = function (req, res) {
     let subscribed = undefined;
-    let subreddits = undefined;
+    let subreddits = [];
     let posts = undefined;
     let karma = 0;
     let sort = undefined;
