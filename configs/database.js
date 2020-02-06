@@ -1,7 +1,7 @@
 module.exports.config = {
-    uri: 'mongodb+srv://admin:anime@cluster0-e7lsm.mongodb.net/test?retryWrites=true',
+    uri: process.env.MONGODB_URI,
     options: {
-        dbName: 'reddit-app',
+        dbName: 'heroku_dk07rc0t',
         useNewUrlParser: true
     },
 }
