@@ -4,9 +4,9 @@ let Profile = require("../models/profile");
 let PostState = require("../models/postState")
 
 exports.get_all = function (req, res) {
-    let subscribed = undefined;
+    let subscribed = [];
     let subreddits = [];
-    let posts = undefined;
+    let posts = [];
     let karma = 0;
     let sort = undefined;
 
