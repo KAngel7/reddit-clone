@@ -255,7 +255,7 @@ exports.subreddit = function (req, res) {
             Profile.update({
                 username: req.session.user
             }, {
-                $push: {
+                $addToSet: {
                     owned: req.body.subreddit
                 }
             },
