@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
-    <%- include('../partials/head', {title: "Frontpage - search"}) %>
+    <%- include('../partials/head', {title: "VNDEVS - Forum - search"}) %>
 
 <body>
     <%- include('../partials/nav', {user: locals.user, karma}) %>
-    <%- include('../partials/jumbotron', {name: "Frontpage"}) %>
+    <%- include('../partials/jumbotron', {name: "VNDEVS - Forum"}) %>
     <span id="auth"><%= isAuth %></span>
 
     <div class="grid-container">
@@ -23,7 +23,7 @@
                         </div>
                         <br><br>
                         
-                        <a class="btn btn-block btn-light auth-req" href="/submit/subreddit" id="create-subreddit">Create subbeddit</a><br>
+                        <a class="btn btn-block btn-light auth-req" href="/submit/subreddit" id="create-subreddit">Create topic</a><br>
 
                 <%- include('../partials/sidebar_index_subscribed', {isAuth, subscribed}) %>
         </div>

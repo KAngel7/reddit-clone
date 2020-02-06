@@ -1,4 +1,4 @@
-# Beddit
+# Vndevs forum
 A reddit clone written using node.js / express.js / mongodb / passport.js
 
 ### Website:
@@ -9,7 +9,7 @@ https://forum.vndevs.com
 
 ### Features:
 * Frontpage
-* Subreddits
+* Topics
 * Submitting comments / posts / links
 * Voting on posts / comments
 * Saving posts / comments
