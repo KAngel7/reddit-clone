@@ -19,7 +19,7 @@
                 <% if(!locals.user) { %>
                     You must be logged in to submit a post / link / topic.
                 <% } else { %>
-                <form id="form-subreddit" action="/submit/subreddit" method="post">
+                <form id="form-subreddit" action="/submit/topic" method="post">
                     <input type="text" class="form-control" name="subreddit" id="subreddit_form" placeholder="Enter topic" required>
                     <div class="invalid-feedback">That topic already exists!</div><br>
                     <textarea class="form-control" rows="5" name="description" placeholder="Enter description" required></textarea><br>
